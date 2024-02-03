@@ -1,0 +1,16 @@
+version: '3'
+services:
+  container:
+    image: ubuntu
+    command: tail -f /dev/null
+    ports:
+      - "8080:80"
+    volumes:
+      - volume:/home/
+volumes:
+  volume:
+    driver: local
+    driver_opts:
+      type: "none"
+      o: "bind"
+      device: "C://Users/Angel/Documents/contenedores/ubuntu/volume"
